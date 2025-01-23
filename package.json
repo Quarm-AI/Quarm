@@ -2,14 +2,14 @@
   "name": "quarm",
   "version": ".0.1",
   "type": "module",
-  "description": "",
+  "description": "Quarm Swarm",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ivan Samarin <ivan.samarin.work@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@ai16z/eliza": "^0.1.6",
     "@elizaos/adapter-postgres": "^0.1.8",
