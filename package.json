@@ -1,0 +1,22 @@
+{
+  "name": "quarm",
+  "version": ".0.1",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ai16z/eliza": "^0.1.6",
+    "@elizaos/adapter-postgres": "^0.1.8",
+    "@elizaos/adapter-redis": "^0.1.8",
+    "@elizaos/core": "^0.1.8",
+    "@elizaos/plugin-node": "^0.1.8",
+    "@tavily/core": "^0.0.2",
+    "dotenv": "^16.4.7"
+  }
+}
