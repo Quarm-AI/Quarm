@@ -23,8 +23,7 @@ import {
   parseArguments,
 } from "./config/index.ts";
 import { initializeDatabase } from "./database/index.ts";
-import { Scraper } from "agent-twitter-client";
-import { userDataPlugin } from "./plugins/index.ts";
+import { quarmPlugin } from "./plugin/index.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -59,7 +58,7 @@ export function createAgent(
     plugins: [
       bootstrapPlugin,
       nodePlugin,
-      userDataPlugin,
+      quarmPlugin,
       character.settings?.secrets?.WALLET_PUBLIC_KEY ? solanaPlugin : null,
     ].filter(Boolean),
     providers: [],
