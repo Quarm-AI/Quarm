@@ -1,22 +1,57 @@
 {
-  "name": "quarm",
-  "version": ".0.1",
+  "name": "@elizaos/eliza-starter",
+  "version": "0.1.1",
+  "main": "src/index.ts",
   "type": "module",
-  "description": "Quarm Swarm",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup src/index.ts --format esm --dts",
+    "start": "tsc && node --loader ts-node/esm src/index.ts",
+    "clean": "./scripts/clean.sh",
+    "start:service:all": "pm2 start pnpm --name=\"all\" --restart-delay=3000 --max-restarts=10 -- run start:all",
+    "stop:service:all": "pm2 stop all"
   },
-  "keywords": [],
-  "author": "Ivan Samarin <ivan.samarin.work@gmail.com>",
-  "license": "MIT",
   "dependencies": {
-    "@ai16z/eliza": "^0.1.6",
-    "@elizaos/adapter-postgres": "^0.1.8",
-    "@elizaos/adapter-redis": "^0.1.8",
-    "@elizaos/core": "^0.1.8",
-    "@elizaos/plugin-node": "^0.1.8",
-    "@tavily/core": "^0.0.2",
-    "dotenv": "^16.4.7"
+    "@elizaos/adapter-postgres": "0.1.8",
+    "@elizaos/adapter-sqlite": "0.1.8",
+    "@elizaos/client-auto": "0.1.8",
+    "@elizaos/client-direct": "^0.1.8",
+    "@elizaos/client-discord": "0.1.8",
+    "@elizaos/client-telegram": "0.1.8",
+    "@elizaos/client-twitter": "0.1.8",
+    "@elizaos/core": "0.1.8",
+    "@elizaos/plugin-bootstrap": "0.1.8",
+    "@elizaos/plugin-image-generation": "0.1.8",
+    "@elizaos/plugin-node": "0.1.8",
+    "@elizaos/plugin-solana": "0.1.8",
+    "@elizaos/plugin-starknet": "0.1.8",
+    "@langchain/core": "^0.3.33",
+    "@tavily/core": "0.0.2",
+    "agent-twitter-client": "^0.0.18",
+    "amqplib": "0.10.5",
+    "better-sqlite3": "11.5.0",
+    "fs": "0.0.1-security",
+    "net": "1.0.2",
+    "path": "0.12.7",
+    "readline": "1.3.0",
+    "url": "0.11.4",
+    "ws": "8.18.0",
+    "yargs": "17.7.2"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "pnpm": {
+    "overrides": {
+      "onnxruntime-node": "1.20.0",
+      "@discordjs/opus": "file:empty-module"
+    }
+  },
+  "resolutions": {
+    "@discordjs/opus": "file:empty-module"
+  },
+  "devDependencies": {
+    "ts-node": "10.9.2",
+    "tsup": "8.3.5",
+    "typescript": "5.6.3"
   }
 }

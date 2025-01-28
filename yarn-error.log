@@ -1,0 +1,81 @@
+Arguments: 
+  /Users/ivan.samarin/.nvm/versions/node/v23.6.0/bin/node /Users/ivan.samarin/.yvm/versions/v1.9.2/bin/yarn.js
+
+PATH: 
+  /Users/ivan.samarin/.nvm/versions/node/v23.6.0/bin:/opt/homebrew/opt/e2fsprogs/sbin:/opt/homebrew/opt/e2fsprogs/bin:/Users/ivan.samarin/.yvm/shim:/Users/ivan.samarin/.bun/bin:/Users/ivan.samarin/.pyenv/shims:/Users/ivan.samarin/.nvm/versions/node/v16.19.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/opt/osquery:/opt/pfutil:/opt/homebrew/opt/e2fsprogs/sbin:/opt/homebrew/opt/e2fsprogs/bin:/Users/ivan.samarin/.yvm/shim:/Users/ivan.samarin/.bun/bin:/Users/ivan.samarin/.pyenv/shims:/Users/ivan.samarin/.nvm/versions/node/v16.19.0/bin:/Users/ivan.samarin/Library/pnpm:/Users/ivan.samarin/.cargo/bin:/Users/ivan.samarin/.local/bin:/Users/ivan.samarin/.local/bin
+
+Yarn version: 
+  1.9.2
+
+Node version: 
+  23.6.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://artifactory.mvk.com/artifactory/api/npm/npm/@elizaos%2fadapter-postgres: ETIMEDOUT
+      at Timeout._onTimeout (/Users/ivan.samarin/.yvm/versions/v1.9.2/lib/cli.js:138076:19)
+      at listOnTimeout (node:internal/timers:614:17)
+      at process.processTimers (node:internal/timers:549:7)
+
+npm manifest: 
+  {
+    "name": "@elizaos/eliza-starter",
+    "version": "0.1.1",
+    "main": "src/index.ts",
+    "type": "module",
+    "scripts": {
+      "build": "tsup src/index.ts --format esm --dts",
+      "start": "tsc && node --loader ts-node/esm src/index.ts",
+      "clean": "./scripts/clean.sh",
+      "start:service:all": "pm2 start pnpm --name=\"all\" --restart-delay=3000 --max-restarts=10 -- run start:all",
+      "stop:service:all": "pm2 stop all"
+    },
+    "dependencies": {
+      "@elizaos/adapter-postgres": "0.1.8",
+      "@elizaos/adapter-sqlite": "0.1.8",
+      "@elizaos/client-auto": "0.1.8",
+      "@elizaos/client-direct": "0.1.7",
+      "@elizaos/client-discord": "0.1.8",
+      "@elizaos/client-telegram": "0.1.8",
+      "@elizaos/client-twitter": "0.1.8",
+      "@elizaos/core": "0.1.8",
+      "@elizaos/plugin-bootstrap": "0.1.8",
+      "@elizaos/plugin-image-generation": "0.1.8",
+      "@elizaos/plugin-node": "0.1.8",
+      "@elizaos/plugin-solana": "0.1.8",
+      "@elizaos/plugin-starknet": "0.1.8",
+      "@tavily/core": "0.0.2",
+      "agent-twitter-client": "^0.0.18",
+      "amqplib": "0.10.5",
+      "better-sqlite3": "11.5.0",
+      "fs": "0.0.1-security",
+      "net": "1.0.2",
+      "path": "0.12.7",
+      "readline": "1.3.0",
+      "url": "0.11.4",
+      "ws": "8.18.0",
+      "yargs": "17.7.2"
+    },
+    "engines": {
+      "node": ">=22"
+    },
+    "pnpm": {
+      "overrides": {
+        "onnxruntime-node": "1.20.0",
+        "@discordjs/opus": "file:empty-module"
+      }
+    },
+    "devDependencies": {
+      "ts-node": "10.9.2",
+      "tsup": "8.3.5",
+      "typescript": "5.6.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
